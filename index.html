@@ -1,25 +1,33 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>D3 Test</title>
+  <meta charset="UTF-8">
+  <title>Event Listeners in D3</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nemo, vero unde repellat perspiciatis facere aliquid odit, dignissimos dolor fuga, sapiente id assumenda deleniti laborum omnis veritatis ex. Iure, quibusdam!</p>
-
-	<ol>
-		<li>Lorem</li>
-		<li>Lorem</li>
-		<li>Lorem</li>
-	</ol>
-
-	<div>Lorem ipsum</div>
-	<div>Lorem ipsum</div>
-	<div>Lorem ipsum</div>
-	<div>Lorem ipsum</div>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
-	<script src="index.js"></script>	
+  <h1>My notes.</h1>
+  <div id="notes">
+    <p class="note">
+      Need to go to the store.
+    </p>
+    <p class="note">
+      What's the name of that movie with that guy?
+    </p>
+    <p class="note">
+      Here's another note.
+	</p>
+  </div>
+  <div id="preview-section">
+	  <p class="note" id="preview"></p>
+  </div>
+  <form id="new-note">
+    <input type="text">
+    <button>Add Note</button>
+  </form>
+  <button id="remove-notes-btn">Remove all notes</button>
+  <button id="feeling-lucky-btn">I'm feeling lucky</button>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
