@@ -1,17 +1,37 @@
+const data = [
+  {},
+  {}
+]
+const createStatistic = (str) => {
+  let chrs = str.split('').sort()
+  let sentenceData = []
+  
+  let character = '' 
+  let frequency = 1
 
-
-d3.select("#new-note")
-    .on('submit', function() {
+  for (let i = 0; i < chrs.length; i++) {
+    character = chrs[i]
+    if (chrs[i] === chrs[i + 1]) {
+      frequency++
+    }else{
+      sentenceData.push([character, frequency])
+      character = chrs[i]
+      frequency = 1
+    }
+  }
+  return sentenceData
+} 
+d3.select("form")
+    .on(
+      'submit', 
+      () => {
       d3.event.preventDefault();
       var input = d3.select('input');
-      d3.select('#preview').style('display', 'none')
-      d3.select("#notes")
-        .append('p')
-          .classed('note', true)
-          .text(input.property('value'));
-      input.property('value', '');
+      data.shift()
+      data.push(createStatistic(input.property('value')))
+      console.log(data)
     });
-
+/*
 d3.select("#remove-notes-btn")
       .on('click', function() {
     d3.selectAll(".note")
@@ -32,11 +52,11 @@ d3.select("input")
     .on(
       'input',
       () => {
-        let tempTxt = d3.select(d3.event.target).property('value')
+        let tempTxt = d3.event.target.value //or d3.select(d3.event.target).property('value')
         d3.select('#preview')
             .style('display', 'block')
             .text(tempTxt)
         
         tempTxt === '' && d3.select('#preview').style('display', 'none')
       }
-      )
+      )*/

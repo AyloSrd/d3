@@ -2,31 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Event Listeners in D3</title>
+  <title>Frequency Count</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>My notes.</h1>
-  <div id="notes">
-    <p class="note">
-      Need to go to the store.
-    </p>
-    <p class="note">
-      What's the name of that movie with that guy?
-    </p>
-    <p class="note">
-      Here's another note.
-	</p>
+  <header> 
+    <h1>Letter Analyzer</h1>
+    <form>
+      <input type="text">
+      <button type="submit">Count the Letters!</button>
+      <button id="reset" type="button">Reset</button>
+    </form>
+  </header>
+  <div>
+    <h2 id="phrase"></h2>
+    <h4 id="count"></h4>
+    <div id="letters"></div>
   </div>
-  <div id="preview-section">
-	  <p class="note" id="preview"></p>
-  </div>
-  <form id="new-note">
-    <input type="text">
-    <button>Add Note</button>
-  </form>
-  <button id="remove-notes-btn">Remove all notes</button>
-  <button id="feeling-lucky-btn">I'm feeling lucky</button>
   <script src="https://d3js.org/d3.v4.js"></script>
   <script src="app.js"></script>
 </body>
